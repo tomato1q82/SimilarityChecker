@@ -48,3 +48,43 @@ TEST_F(SimularityCheckFixture, lengthTest4) {
 
 	EXPECT_EQ(actualScore, expectedScore);
 }
+
+TEST_F(SimularityCheckFixture, AlphaTest1) {
+	string inputStringA = "ASD";
+	string inputSTringB = "DSA";
+
+	int actualScore = simchecker.CheckAlphabetAndScore(inputStringA, inputSTringB);
+	int expectedScore = 40;
+
+	EXPECT_EQ(actualScore, expectedScore);
+}
+
+TEST_F(SimularityCheckFixture, AlphaTest2) {
+	string inputStringA = "A";
+	string inputSTringB = "BB";
+
+	int actualScore = simchecker.CheckAlphabetAndScore(inputStringA, inputSTringB);
+	int expectedScore = 0;
+
+	EXPECT_EQ(actualScore, expectedScore);
+}
+
+TEST_F(SimularityCheckFixture, AlphaTest3) {
+	string inputStringA = "AAABB";
+	string inputSTringB = "BA";
+
+	int actualScore = simchecker.CheckAlphabetAndScore(inputStringA, inputSTringB);
+	int expectedScore = 40;
+
+	EXPECT_EQ(actualScore, expectedScore);
+}
+
+TEST_F(SimularityCheckFixture, AlphaTest4) {
+	string inputStringA = "AA";
+	string inputSTringB = "AAE";
+
+	int actualScore = simchecker.CheckAlphabetAndScore(inputStringA, inputSTringB);
+	int expectedScore = 20;
+
+	EXPECT_EQ(actualScore, expectedScore);
+}
